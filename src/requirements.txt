@@ -1,0 +1,7 @@
+ to add questions to a quiz
+ check the user’s answers
+ update the score
+ move to the next question after the user responds
+
+
+ create user class
