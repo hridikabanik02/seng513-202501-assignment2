@@ -1,0 +1,124 @@
+/* Background for First Page */
+body {
+    background: url('assets/dusk-gradient.avif');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-width: 100vw; /*for full width*/
+    height: 100vh; /*for full height*/
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Quiz Start Container */
+.start-container {
+    text-align: center;
+    background: rgb(250, 245, 250); /* Dark overlay for contrast */
+    padding: 50px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* Next Button */
+.start-btn {
+    background: black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px; /* Adds space between text and button */
+}
+.start-btn:hover {
+    background: #eca2f5;
+}
+
+/* DRAFT */
+/* Quiz Container */
+.quiz-container {
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Quiz Title */
+.quiz-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Question Styling */
+.quiz-question {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Answer Options */
+.quiz-options {
+    list-style: none;
+    padding: 0;
+}
+
+.quiz-options li {
+    background: #ff6699;
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.quiz-options li:hover {
+    background: #ff3366;
+    transform: scale(1.05);
+}
+
+/* Radio Button Styling */
+.quiz-options input {
+    display: none;
+}
+
+.quiz-options label {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Selected Answer */
+.quiz-options li.selected {
+    background: #33ccff;
+}
+
+
+
+
+/* Music Icon */
+.music-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .quiz-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+}

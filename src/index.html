@@ -1,16 +1,27 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is the Quiz App!</title>
-  </head>
-  <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-    
-    <button id="start-btn">Start Quiz</button>
-    <div id="question-container"></div>
+    <title>Music Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-    <script src="main.js"></script>
-  </body>
+    <div class="start-container">
+        <h1 class="quiz-title">🎵 Music Quiz 🎶</h1>
+
+        <!-- Quiz Questions -->
+        <div id="question-container">
+            <p id="question-text" class="quiz-question"></p>
+            <ul id="answer-options" class="quiz-options"></ul>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button id="start-btn" class="start-btn">START</button>
+    </div>
+
+    <script src="quiz.js"></script>
+
+</body>
 </html>
