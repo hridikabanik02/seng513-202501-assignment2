@@ -21,7 +21,7 @@ body {
     color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-
+/* this is for styling the quiz title */
 .quiz-title {
     font-size: 24px;
     font-weight: bold;
@@ -29,7 +29,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Start Button */
+/* for styling Start Button */
 .start-btn {
     background: black;
     color: white;
@@ -44,7 +44,7 @@ body {
     background: #eca2f5;
 }
 
-/* Quiz question container */
+/* styling for Quiz question container */
 .quiz-container {
     max-width: 600px;
     background: #fff;
@@ -55,33 +55,27 @@ body {
     position: relative;
 }
 
-/* Question Styling */
+/* styling for the quiz question */
 .quiz-question {
     font-size: 18px;
     color: #444;
     font-weight: bold;
     margin-bottom: 15px;
 }
-
-
-/* DRAFT */
-/* Quiz Container */
-
-
-/* Quiz Title */
-
-
-
-
 /* Answer Options */
 .quiz-options {
     list-style: none;
     padding: 0;
 }
 
+
+/* DRAFT */
+
+
 .quiz-options li {
-    background: #ff6699;
+    background:rgb(228, 92, 137);
     color: #fff;
+    
     padding: 12px;
     border-radius: 8px;
     margin: 8px 0;
@@ -93,7 +87,7 @@ body {
 }
 
 .quiz-options li:hover {
-    background: #ff3366;
+    background:rgb(231, 150, 171);
     transform: scale(1.05);
 }
 
