@@ -15,13 +15,21 @@ body {
 /* Quiz Start Container */
 .start-container {
     text-align: center;
-    background: rgb(250, 245, 250); /* Dark overlay for contrast */
+    background: rgb(250, 245, 250); /* Can change colour if required */
     padding: 50px;
     border-radius: 12px;
     color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-/* Next Button */
+
+.quiz-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Start Button */
 .start-btn {
     background: black;
     color: white;
@@ -36,8 +44,7 @@ body {
     background: #eca2f5;
 }
 
-/* DRAFT */
-/* Quiz Container */
+/* Quiz question container */
 .quiz-container {
     max-width: 600px;
     background: #fff;
@@ -48,20 +55,23 @@ body {
     position: relative;
 }
 
-/* Quiz Title */
-.quiz-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #444;
-    margin-bottom: 20px;
-}
-
 /* Question Styling */
 .quiz-question {
     font-size: 18px;
+    color: #444;
     font-weight: bold;
     margin-bottom: 15px;
 }
+
+
+/* DRAFT */
+/* Quiz Container */
+
+
+/* Quiz Title */
+
+
+
 
 /* Answer Options */
 .quiz-options {
