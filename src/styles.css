@@ -71,20 +71,64 @@ body {
 }
 
 /* styling for the quiz question */
-.quiz-question {
+.quiz-question-text {
     font-size: 18px;
     color: #444;
     font-weight: bold;
     margin-bottom: 15px;
 }
-/* Answer Options */
-.quiz-options {
+
+#question-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Style the quiz answer buttons */
+button {
+    background: rgb(228, 92, 137); /* Pinkish background */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 8px 5px;
+    transition: all 0.3s ease-in-out;
+    width: 100%; /* Make all buttons same width */
+    max-width: 300px; /* Limit width */
+    display: block; /* Stack buttons vertically */
+    text-align: center;
+}
+
+/* Hover effect */
+button:hover {
+    background: rgb(231, 150, 171);
+    transform: scale(1.05);
+}
+
+/* Active (click) effect */
+button:active {
+    transform: scale(0.95);
+    background: rgb(200, 80, 120);
+}
+
+
+
+
+
+
+
+/* .quiz-options {
     list-style: none;
     padding: 0;
 }
 
 
-/* DRAFT */
+
 
 
 .quiz-options li {
@@ -106,7 +150,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Radio Button Styling */
+
 .quiz-options input {
     display: none;
 }
@@ -119,7 +163,7 @@ body {
     align-items: center;
 }
 
-/* Selected Answer */
+
 .quiz-options li.selected {
     background: #33ccff;
 }
@@ -127,17 +171,17 @@ body {
 
 
 
-/* Music Icon */
+
 .music-icon {
     width: 30px;
     height: 30px;
     margin-right: 10px;
 }
 
-/* Responsive Design */
+
 @media (max-width: 600px) {
     .quiz-container {
         width: 90%;
         margin: 20px auto;
     }
-}
+} */

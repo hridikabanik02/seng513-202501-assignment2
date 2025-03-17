@@ -84,6 +84,7 @@ class Quiz {
             return;
         }
         this.currentIndex++;
+        this.questionNumberText.classList.add("quiz-question-text");
         this.questionNumberText.innerText = "Question " + this.currentIndex + "/10";
 
         this.displayQuestion(question);
@@ -95,7 +96,7 @@ class Quiz {
             return;
         }
 
-        this.questionContainer.innerHTML = `<h2>${question.text}</h2>`;
+        this.questionContainer.innerHTML = `<h2 class=quiz-question-text>${question.text}</h2>`;
 
         question.choices.forEach(choice => {
             const button = document.createElement("button");
@@ -104,8 +105,10 @@ class Quiz {
             this.questionContainer.appendChild(button);
         });
 
-        
+        this.scoreText.classList.add("quiz-question-text");
         this.scoreText.innerText = "Score: " + this.score;
+
+        this.difficultyText.classList.add("quiz-question-text");
         this.difficultyText.innerText = "Difficulty: " + this.difficulty;
     }
 
@@ -140,16 +143,16 @@ class Quiz {
     }
 
     endQuiz() {
-        this.quizContainer.innerHTML = `<h2>Game Finished! Final Score: ${this.score}</h2>`;
+        this.quizContainer.innerHTML = `<h2 class=quiz-question-text>Game Finished! Final Score: ${this.score}</h2>`;
 
         const restartButton = document.createElement("button");
         restartButton.innerText = "Restart Quiz";
-        restartButton.onclick = () => this.startQuiz();
+        // restartButton.onclick = () => this.startQuiz();
+        restartButton.onclick = () => location.reload();
 
         this.quizContainer.appendChild(restartButton);
     }
 }
-
 
 class Question {
     constructor(text, choices, correctAnswer) {
