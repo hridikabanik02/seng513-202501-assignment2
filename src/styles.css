@@ -1,0 +1,143 @@
+/* Background for First Page */
+body {
+    background: url('assets/dusk-gradient.avif');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-width: 100vw; /*for full width*/
+    height: 100vh; /*for full height*/
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Quiz Start Container */
+.start-container {
+    text-align: center;
+    background: rgb(250, 245, 250); /* Can change colour if required */
+    padding: 50px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* this is for styling the quiz title */
+.quiz-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* for styling Start Button */
+.start-btn {
+    background: black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px; /* Adds space between text and button */
+}
+.start-btn:hover {
+    background: #eca2f5;
+}
+
+.username-input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.username-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+/* styling for Quiz question container */
+.quiz-container {
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* styling for the quiz question */
+.quiz-question {
+    font-size: 18px;
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+/* Answer Options */
+.quiz-options {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* DRAFT */
+
+
+.quiz-options li {
+    background:rgb(228, 92, 137);
+    color: #fff;
+    
+    padding: 12px;
+    border-radius: 8px;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.quiz-options li:hover {
+    background:rgb(231, 150, 171);
+    transform: scale(1.05);
+}
+
+/* Radio Button Styling */
+.quiz-options input {
+    display: none;
+}
+
+.quiz-options label {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Selected Answer */
+.quiz-options li.selected {
+    background: #33ccff;
+}
+
+
+
+
+/* Music Icon */
+.music-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .quiz-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+}

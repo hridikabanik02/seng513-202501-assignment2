@@ -3,21 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is the Quiz App!</title>
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <!-- <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p> -->
-    
-    <h1>Quiz Game</h1>
-
-    <button id="start-btn">Start Quiz</button>
-    
-    <div id="quiz-container" style="display: none;">
-      <h3 id="question-number"></h3>
-      <div id="question-container"></div>
-
-      <h3 id="score-text"></h3>
-      <h3 id="difficulty-text"></h3>
+    <div class="start-container">
+      <h1 class="quiz-title" id="quizTitle">Begin Quiz!</h1>
+      
+      <!-- Username Input Field -->
+      <input type="text" id="username" class="username-input" placeholder="Enter your username">
+      
+      <!-- Quiz Questions -->
+      <div id="quiz-container" style="display: none;">
+          <h3 id="question-number"></h3>
+          <div id="question-container"></div>
+          <h3 id="score-text"></h3>
+          <h3 id="difficulty-text"></h3>
+      </div>
+      
+      <!-- Navigation Buttons -->
+      <button id="start-btn" class="start-btn">START</button>
     </div>
     
     <script src="quiz.js"></script>

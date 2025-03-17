@@ -9,6 +9,8 @@ class Quiz {
 
 
         this.startBtn = document.getElementById("start-btn");
+        this.quizTitle = document.getElementById("quizTitle");
+        this.usernameField = document.getElementById("username");
         this.quizContainer = document.getElementById("quiz-container");
         this.questionContainer = document.getElementById("question-container");
         this.questionNumberText = document.getElementById("question-number");
@@ -54,6 +56,10 @@ class Quiz {
         this.score = 0;
         this.difficulty = "easy";
         this.usedQuestions.clear(); 
+
+        // Hide start screen elements
+        this.quizTitle.style.display = "none"; 
+        this.usernameField.style.display = "none";
 
         this.startBtn.style.display = "none";
         this.quizContainer.style.display = "block";
