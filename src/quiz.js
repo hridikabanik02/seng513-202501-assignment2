@@ -1,5 +1,12 @@
 import { User } from './user.js';
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 class Quiz {
     constructor() {
         this.easyQuestions = [];
@@ -42,6 +49,7 @@ class Quiz {
                     this.usedQuestions.add(q.question);
 
                     const options = [...q.incorrect_answers, q.correct_answer];
+                    shuffleArray(options);
                     const questionObj = new Question(q.question, options, q.correct_answer);
 
                     if (q.difficulty === "easy") {
@@ -164,8 +172,12 @@ class Quiz {
             button.disabled = true;
         });
 
+    
         if (choice === question.correctAnswer) {
-            this.score++;
+            this.score++; 
+            this.increaseDifficulty();
+        } else {
+            this.decreaseDifficulty();
         }
     
         this.scoreText.innerText = "Score: " + this.score;
