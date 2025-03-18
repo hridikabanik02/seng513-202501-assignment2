@@ -1,4 +1,4 @@
-/* Background for First Page */
+/* this is the background for the page*/
 body {
     background: url('assets/dusk-gradient.avif');
     background-size: cover;
@@ -30,7 +30,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* for styling Start Button */
+/* this is for styling Start Button */
 .start-btn {
     background: black;
     color: white;
@@ -73,7 +73,7 @@ body {
     
 }
 
-/* styling for the quiz question */
+/* this is styling for the quiz question */
 .quiz-question-text {
     font-size: 18px;
     color: #444;
@@ -81,6 +81,7 @@ body {
     margin-bottom: 15px;
 }
 
+/* this is styling for the question text */
 #question-container {
     min-width: 800px;  
     display: flex;
@@ -91,9 +92,9 @@ body {
     width: 100%;
 }
 
-/* Style the quiz answer buttons */
+/* Styling the quiz answer buttons */
 button {
-    background: rgb(228, 92, 137); /* Pinkish background */
+    background: rgb(228, 92, 137);
     color: white;
     padding: 12px;
     border: none;
@@ -102,19 +103,19 @@ button {
     font-size: 16px;
     margin: 8px auto;
     transition: all 0.3s ease-in-out;
-    width: 100%; /* Make all buttons same width */
+    width: 100%; 
     max-width: 300px; /* Limit width */
-    display: block; /* Stack buttons vertically */
+    display: block; /* for stacking the buttons vertically */
     text-align: center;
 }
 
-
+/* Hover effect */
 button:hover {
     /* background: rgb(231, 150, 171); */
     transform: scale(1.05);
 }
 
-
+/*To show the active button */
 button:active {
     transform: scale(0.95);
     background: rgb(200, 80, 120);
@@ -133,3 +134,12 @@ button:active {
     font-weight: bold;
     transition: background-color 0.3s ease-in-out;
 }
+/* MEDIA QUERIES */
+/* 
+
+@media (max-width: 600px) {
+    .quiz-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+} */
