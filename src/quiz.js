@@ -234,6 +234,13 @@ class Quiz {
         restartButton.onclick = () => this.startQuiz();
 
         this.quizContainer.appendChild(restartButton);
+
+
+        // End Quiz button (returns to the starting page)
+        const endQuizButton = document.createElement("button");
+        endQuizButton.innerText = "End Quiz";
+        endQuizButton.onclick = () => window.location.reload();
+        this.quizContainer.appendChild(endQuizButton);
     }
 }
 
