@@ -6,12 +6,7 @@ export class User {
     }
   
     updateScore(points) {
-      this.score = this.score + points;
-      this.scoreHistory.push(this.score);
-    }
-  
-    getCurrentScore() {
-      return this.score;
+      this.scoreHistory.push(points);
     }
   
     getScoreHistory() {
