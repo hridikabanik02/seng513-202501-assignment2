@@ -1,13 +1,7 @@
 import { User } from './user.js';
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
 class Quiz {
+    //initialising the Quiz object, event listeners and setting some default values
     constructor() {
         this.easyQuestions = [];
         this.mediumQuestions = [];
@@ -34,6 +28,7 @@ class Quiz {
         this.startBtn.addEventListener("click", () => this.startQuiz());
     }
 
+    //we fetch 30 questions from the api and then separet them according to their difficulty levels
     async fetchQuestions() {
         const apiUrl = `https://opentdb.com/api.php?amount=30`;
         try {
@@ -68,6 +63,7 @@ class Quiz {
         }
     }
 
+    //generator function to yield next question based on what the current difficulty is for user
     *questionGeneratorFunction() {
         while (this.currentIndex < this.totalQuestions) {
             let question;
@@ -86,7 +82,7 @@ class Quiz {
         }
     }
     
-
+    //we start the quiz using this fucntion
     async startQuiz() {
 
         if (!this.user) {
@@ -123,6 +119,7 @@ class Quiz {
         this.nextQuestion();
     }
 
+    //used to load the next question 
     nextQuestion() {
         const { value: question, done } = this.questionGenerator.next();
     
@@ -138,6 +135,7 @@ class Quiz {
         this.displayQuestion(question);
     }
 
+    //used to display current question and creates buttons for answer options
     displayQuestion(question) {
         if (!question) {
             console.error("Error: No question available.");
@@ -159,6 +157,7 @@ class Quiz {
         this.difficultyText.innerText = "Difficulty: " + this.difficulty;
     }
 
+    //handles answer and increases/decreases diffciulty accordingly. Will also display the right and/or wrong answers to user
     handleAnswer(question, choice) {
         const buttons = this.questionContainer.querySelectorAll("button");
     
@@ -185,6 +184,7 @@ class Quiz {
         setTimeout(() => this.nextQuestion(), 1500);
     }
 
+    //to increase difficulty
     increaseDifficulty() {
         if (this.difficulty === "easy") {
             this.difficulty = "medium";
@@ -193,6 +193,7 @@ class Quiz {
         }
     }
 
+    //to decrease difficulty
     decreaseDifficulty() {
         if (this.difficulty === "hard") {
             this.difficulty = "medium";
@@ -201,6 +202,7 @@ class Quiz {
         }
     }
 
+    //end quiz, user will get to retsrart or end quiz. will also display score history
     endQuiz() {
         this.user.updateScore(this.score)
 
@@ -223,6 +225,15 @@ class Quiz {
     }
 }
 
+// Using this function to shuffle the options of a question around
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+
 class Question {
     constructor(text, choices, correctAnswer) {
         this.text = text;
@@ -230,6 +241,7 @@ class Question {
         this.correctAnswer = correctAnswer;
     }
 
+    //checking if user answer is correct
     isCorrect(option) {
         return option === this.correctAnswer;
     }
