@@ -60,10 +60,31 @@ class Quiz {
                     }
                 }
             });
+
+            this.questionGenerator = this.questionGeneratorFunction();
         } catch (error) {
             alert("Error: Couldn't fetch questions. Try again later.");
         }
     }
+
+    *questionGeneratorFunction() {
+        while (this.currentIndex < this.totalQuestions) {
+            let question;
+            if (this.difficulty === "easy") {
+                question = this.easyQuestions.shift();
+            } else if (this.difficulty === "medium") {
+                question = this.mediumQuestions.shift();
+            } else if (this.difficulty === "hard") {
+                question = this.hardQuestions.shift();
+            }
+    
+            if (!question) {
+                return; // Stop if no more questions available
+            }
+            yield question;
+        }
+    }
+    
 
     async startQuiz() {
         // If no user exists, this is the very first start.
@@ -104,32 +125,46 @@ class Quiz {
         this.nextQuestion();
     }
 
+    // nextQuestion() {
+    //     // End quiz if we've reached the total number of questions.
+    //     if (this.currentIndex >= this.totalQuestions) {
+    //         this.endQuiz();
+    //         return;
+    //     }
+
+    //     let question;
+    //     // Select a question based on current difficulty
+    //     if (this.difficulty === "easy") {
+    //         question = this.easyQuestions.shift();
+    //     } else if (this.difficulty === "medium") {
+    //         question = this.mediumQuestions.shift();
+    //     } else if (this.difficulty === "hard") {
+    //         question = this.hardQuestions.shift();
+    //     }
+
+    //     // If no question is available for the current difficulty, end the quiz.
+    //     if (!question) {
+    //         this.endQuiz();
+    //         return;
+    //     }
+
+    //     this.currentIndex++;
+    //     this.questionNumberText.classList.add("quiz-question-text");
+    //     this.questionNumberText.innerText = "Question " + this.currentIndex + " of " + this.totalQuestions;
+    //     this.displayQuestion(question);
+    // }
     nextQuestion() {
-        // End quiz if we've reached the total number of questions.
-        if (this.currentIndex >= this.totalQuestions) {
+        const { value: question, done } = this.questionGenerator.next();
+    
+        if (done || !question) {
             this.endQuiz();
             return;
         }
-
-        let question;
-        // Select a question based on current difficulty
-        if (this.difficulty === "easy") {
-            question = this.easyQuestions.shift();
-        } else if (this.difficulty === "medium") {
-            question = this.mediumQuestions.shift();
-        } else if (this.difficulty === "hard") {
-            question = this.hardQuestions.shift();
-        }
-
-        // If no question is available for the current difficulty, end the quiz.
-        if (!question) {
-            this.endQuiz();
-            return;
-        }
-
+    
         this.currentIndex++;
         this.questionNumberText.classList.add("quiz-question-text");
-        this.questionNumberText.innerText = "Question " + this.currentIndex + " of " + this.totalQuestions;
+        this.questionNumberText.innerText = `Question ${this.currentIndex} of ${this.totalQuestions}`;
+        
         this.displayQuestion(question);
     }
 
