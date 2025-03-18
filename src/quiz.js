@@ -128,6 +128,7 @@ class Quiz {
         }
 
         this.currentIndex++;
+        this.questionNumberText.classList.add("quiz-question-text");
         this.questionNumberText.innerText = "Question " + this.currentIndex + " of " + this.totalQuestions;
         this.displayQuestion(question);
     }
@@ -139,7 +140,7 @@ class Quiz {
         }
 
         // Clear previous question content and display the new question
-        this.questionContainer.innerHTML = `<h2 class="">${question.text}</h2>`;
+        this.questionContainer.innerHTML = `<h2 class=quiz-question-text>${question.text}</h2>`;
 
         // Create answer buttons for each option
         question.choices.forEach(choice => {
@@ -150,6 +151,8 @@ class Quiz {
         });
 
         // Update score and difficulty display
+        this.scoreText.classList.add("quiz-question-text");
+        this.difficultyText.classList.add("quiz-question-text");
         this.scoreText.innerText = "Score: " + this.score;
         this.difficultyText.innerText = "Difficulty: " + this.difficulty;
     }
@@ -184,6 +187,7 @@ class Quiz {
     endQuiz() {
         this.user.updateScore(this.score)
         // Display final score and complete score history.
+        this.quizContainer.classList.add("quiz-question-text");
         this.quizContainer.innerHTML = `
             <h2>Game Finished! Final Score: ${this.score} / ${this.totalQuestions}</h2>
             <div>Score History: ${this.user.getScoreHistory().join(", ")}</div>
