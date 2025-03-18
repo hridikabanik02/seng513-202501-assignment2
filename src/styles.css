@@ -70,6 +70,7 @@ body {
     border-radius: 12px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     position: relative;
+    text-align: center;
     
 }
 
@@ -82,14 +83,12 @@ body {
 }
 
 /* this is styling for the question text */
-#question-container {
-    min-width: 800px;  
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+#question-container {  
     width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Styling the quiz answer buttons */
@@ -106,7 +105,6 @@ button {
     width: 100%; 
     max-width: 300px; /* Limit width */
     display: block; /* for stacking the buttons vertically */
-    text-align: center;
 }
 
 /* Hover effect */
@@ -135,11 +133,56 @@ button:active {
     transition: background-color 0.3s ease-in-out;
 }
 /* MEDIA QUERIES */
-/* 
 
-@media (max-width: 600px) {
-    .quiz-container {
+/* Phones */
+@media (max-width: 426px) {
+    .start-container {
         width: 90%;
-        margin: 20px auto;
+        height: auto;
+        padding: 20px;
     }
-} */
+
+    .quiz-container {
+        width: 90%; 
+        max-width: 350px; 
+        margin: 20px auto;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    #question-container {
+        width: 100%; 
+        padding: 10px;
+    }
+
+    button {
+        max-width: 100%; 
+    }
+}
+
+/* Tablets & Mid-size Screens */
+@media (max-width: 768px) {
+    .quiz-container {
+        width: 80%; 
+        max-width: 500px; 
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .quiz-question-text {
+        font-size: 20px; 
+    }
+
+    button {
+        max-width: 280px; 
+        font-size: 18px; 
+    }
+}
+
+/* Laptops & Desktops */
+@media (max-width: 1024px) {
+    .quiz-container {
+        width: 70%; 
+        max-width: 600px; 
+    }
+}
