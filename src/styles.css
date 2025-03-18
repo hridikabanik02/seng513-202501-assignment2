@@ -158,5 +158,8 @@ button:active {
     .quiz-question-text{
         font-size: 35px;
     }
+    #question-container button{
+        font-size: 30px;
+    }
 
 } 
