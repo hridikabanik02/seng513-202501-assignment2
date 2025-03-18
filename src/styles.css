@@ -108,24 +108,28 @@ button {
     text-align: center;
 }
 
-/* Hover effect */
+
 button:hover {
-    background: rgb(231, 150, 171);
+    /* background: rgb(231, 150, 171); */
     transform: scale(1.05);
 }
 
-/* Active (click) effect */
+
 button:active {
     transform: scale(0.95);
     background: rgb(200, 80, 120);
 }
 
+.correct-answer {
+    background-color: #198754; /* Dark Green */
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
 
-/* 
-
-@media (max-width: 600px) {
-    .quiz-container {
-        width: 90%;
-        margin: 20px auto;
-    }
-} */ */
+.wrong-answer {
+    background-color: #a71d2a; /* Darker Red */
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}

@@ -192,15 +192,34 @@ class Quiz {
         this.difficultyText.innerText = "Difficulty: " + this.difficulty;
     }
 
+    // handleAnswer(question, choice) {
+    //     const isCorrect = question.isCorrect(choice);
+    //     if (isCorrect) {
+    //         this.score++;
+    //         this.increaseDifficulty();
+    //     } else {
+    //         this.decreaseDifficulty();
+    //     }
+    //     this.nextQuestion();
+    // }
+
     handleAnswer(question, choice) {
-        const isCorrect = question.isCorrect(choice);
-        if (isCorrect) {
-            this.score++;
-            this.increaseDifficulty();
-        } else {
-            this.decreaseDifficulty();
-        }
-        this.nextQuestion();
+        const buttons = this.questionContainer.querySelectorAll("button");
+    
+        buttons.forEach(button => {
+            if (button.textContent === question.correctAnswer) {
+                // ✅ Ensure correct answer is highlighted green immediately
+                button.classList.add("correct-answer");
+            } 
+            if (button.textContent === choice && choice !== question.correctAnswer) {
+                // ❌ Ensure incorrect selection is highlighted red
+                button.classList.add("wrong-answer");
+            }
+            button.disabled = true; // Disable all buttons after selection
+        });
+    
+        // Move to next question after a delay
+        setTimeout(() => this.nextQuestion(), 1500);
     }
 
     increaseDifficulty() {
