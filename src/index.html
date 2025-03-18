@@ -13,15 +13,21 @@
         <!-- Username Input Field -->
         <input type="text" id="username" class="username-input" placeholder="Enter your username">
 
-        <!-- Quiz Questions -->
-        <div id="question-container">
-            <p id="question-text" class="quiz-question"></p>
-            <ul id="answer-options" class="quiz-options"></ul>
+        <!-- Start Screen -->
+        <div id="start-screen">
+            <button id="start-btn" class="start-btn">START</button>
         </div>
 
-        <!-- Navigation Buttons -->
-        <button id="start-btn" class="start-btn">START</button>
-        
+        <!-- Quiz Questions - Initially Hidden -->
+        <div id="question-container" style="display: none;">
+            <p id="question-text" class="quiz-question"></p>
+            <ul id="answer-options" class="quiz-options"></ul>
+            
+            <!-- Navigation Buttons -->
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <button id="next-btn" class="start-btn">Next</button>
+            </div>
+        </div>
     </div>
 
     <script src="main.js"></script>
