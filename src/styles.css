@@ -135,11 +135,35 @@ button:active {
     transition: background-color 0.3s ease-in-out;
 }
 /* MEDIA QUERIES */
-/* 
-
 @media (max-width: 600px) {
+    /* Adjust quiz container for smaller screens */
     .quiz-container {
-        width: 90%;
-        margin: 20px auto;
+      width: 90%;         /* Make container take most of the width */
+      padding: 15px;      /* Reduce padding */
+      margin: 20px auto;  /* Reduce top/bottom margins */
     }
-} */
+    
+    /* Adjust title font size */
+    .quiz-title {
+      font-size: 20px;
+    }
+    
+    /* Adjust question text */
+    .quiz-question-text {
+      font-size: 16px;
+    }
+    
+    /* Adjust answer buttons */
+    button {
+      font-size: 14px;
+      padding: 10px;
+      max-width: 100%;  /* Ensure buttons stretch within the container */
+    }
+    
+    /* Adjust username input field */
+    .username-input {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+
